@@ -1,0 +1,19 @@
+# Ignorar todo
+/*
+!.gitignore
+
+# Excepciones de ignoracion
+!dconf
+!bspwm
+!fish
+!htop
+!ghidra
+!kitty
+!nvim
+!omf
+!picom
+!polybar
+!qtile
+!ranger
+!rofi
+!sxhkd

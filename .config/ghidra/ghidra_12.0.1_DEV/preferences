@@ -1,0 +1,14 @@
+#User Preferences
+#Sun Feb 08 16:34:47 GMT-03:00 2026
+G_FILE_CHOOSER.HEIGHT.Choose\ Theme\ File=600
+G_FILE_CHOOSER.VIEW_STYLE.Choose\ Theme\ File=SimpleView
+G_FILE_CHOOSER.WIDTH.Choose\ Theme\ File=800
+GhidraShowWhatsNew=false
+RECENT_0=/home/RafaxWolf/Downloads/ghidra-dark-theme
+RecentProjects=
+SHOW.HELP.NAVIGATION.AID=true
+SHOW_TIPS=false
+TIP_INDEX=1
+Theme=File\:/home/RafaxWolf/.config/ghidra/ghidra_12.0.1_DEV/themes/ghidra-dark-0.1.0.theme
+USER_AGREEMENT=ACCEPT
+ViewedProjects=
