@@ -27,7 +27,11 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'vim-airline/vim-airline-themes'
         
         " Indent guides
-        " Plug 'Yggdroot/indentLine' 
+        Plug 'Yggdroot/indentLine' 
+        
+        " Move lines
+        Plug 'fedepujol/move.nvim'
+
         " Git integration
         Plug 'mhinz/vim-signify'
         
@@ -62,5 +66,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'ayu-theme/ayu-vim'
         Plug 'dracula/vim', { 'as': 'dracula' }
         Plug 'phanviet/vim-monokai-pro'
+        Plug 'tiagovla/tokyodark.nvim'
+        Plug 'ghifarit53/tokyonight-vim'
     endif
 call plug#end()
