@@ -1,19 +1,12 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source /home/RafaxWolf/.powerlevel10k/powerlevel10k.zsh-theme
+# Powerlevel10k remains installed; this config uses a Kali-like prompt.
 
 # Aliases
 # ---------------------------------------------------------
 # cat
-alias cat='bat'
-alias catn='bat --style=plain'
-alias catp='bat --paging=never'
-alias catnp='bat --style=plain --paging=never'
+alias cat='batcat --color=always'
+alias catn='batcat --style=plain'
+alias catp='batcat --paging=never'
+alias catnp='batcat --style=plain --paging=never'
 
 # ls
 alias ls='lsd --group-dirs=first'
@@ -39,7 +32,7 @@ alias getArch='getArch.py'
 alias responder='/opt/Responder/Responder.py'
 alias deepextract='/opt/Wolf/Tools/decompressor.sh'
 
-alias fzf='/usr/bin/fzf --preview "/usr/bin/bat --color=always --style=numbers --line-range=:500 {}"'
+alias fzf='/usr/bin/fzf --preview "/usr/bin/batcat --color=always --style=numbers --line-range=:500 {}"'
 
 # Bindings
 # -------------------------------------------------------
@@ -55,32 +48,20 @@ bindkey  "^[[3~"  delete-char
 function settarget(){
     ip_address=$1
     machine_name=$2
-    echo "$ip_address $machine_name" > /home/RafaxWolf/.config/bin/target
+    echo "$ip_address $machine_name" > "$HOME/.config/bin/target"
 }
 
 # Clear Target
 function cleartarget(){
-    echo '' > /home/RafaxWolf/.config/bin/target
+    echo '' > "$HOME/.config/bin/target"
 }
 
 
-# Plugins
-# -----------------------------------------------------------------------------------------------------
-
-# ZSH AutoSuggestions Plugin
-if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-# ZSH Syntax Highlighting Plugin
-if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
-# ZSH Sudo Plugin
-if [ -f /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh ]; then
-  source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-fi
+# Zsh plugins shipped with Oh My Zsh.
+ZSH="${ZSH:-$HOME/.oh-my-zsh}"
+[[ -r "$ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh" ]] && source "$ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+[[ -r "$ZSH/plugins/history-substring-search/history-substring-search.plugin.zsh" ]] && source "$ZSH/plugins/history-substring-search/history-substring-search.plugin.zsh"
+[[ -r "$ZSH/plugins/zsh-sudo/sudo.plugin.zsh" ]] && source "$ZSH/plugins/zsh-sudo/sudo.plugin.zsh"
 
 
 # Use modern completion system
@@ -114,11 +95,22 @@ setopt histignorealldups sharehistory
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# The Powerlevel10k config remains available for later restoration.
+
+# Search history by the text already typed.
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Load last so syntax highlighting can wrap all line-editor widgets.
+[[ -r "$ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh" ]] && source "$ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+
+PROMPT='%F{blue}┌──(%F{green}%n㉿%m%F{blue})-[%F{white}%~%F{blue}]
+└─%F{green}%#%f '
+
+
 
 # Created by `pipx` on 2025-02-10 05:53:23
-export PATH="$PATH:/home/RafaxWolf/.local/bin"
-export MANPAGER="bat -plman"
+export PATH="$PATH:$HOME/.local/bin"
+export MANPAGER="batcat -plman"
