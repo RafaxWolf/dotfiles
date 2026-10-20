@@ -103,11 +103,26 @@ bindkey '^[[B' history-substring-search-down
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Color recognized commands cyan; keep unknown commands red.
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[command]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[function]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan'
+
 # Load last so syntax highlighting can wrap all line-editor widgets.
 [[ -r "$ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh" ]] && source "$ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
-PROMPT='%F{blue}┌──(%F{green}%n㉿%m%F{blue})-[%F{white}%~%F{blue}]
-└─%F{green}%#%f '
+autoload -Uz add-zsh-hook vcs_info
+zstyle ':vcs_info:git:*' formats ' %b'
+zstyle ':vcs_info:git:*' actionformats ' %b (%a)'
+add-zsh-hook precmd vcs_info
+setopt prompt_subst
+
+PROMPT='%F{blue}┌──(%F{green}%n㉿%m%F{blue})-[%F{cyan} %~%f%F{cyan}${vcs_info_msg_0_}%F{blue}]
+└─%F{cyan}%#%f '
 
 
 
