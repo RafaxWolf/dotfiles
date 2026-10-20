@@ -116,8 +116,8 @@ ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan'
 [[ -r "$ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh" ]] && source "$ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
 autoload -Uz add-zsh-hook vcs_info
-zstyle ':vcs_info:git:*' formats ' %b'
-zstyle ':vcs_info:git:*' actionformats ' %b (%a)'
+zstyle ':vcs_info:git:*' formats ' │  %b'
+zstyle ':vcs_info:git:*' actionformats ' │  %b (%a)'
 add-zsh-hook precmd vcs_info
 setopt prompt_subst
 
