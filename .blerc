@@ -1,0 +1,11 @@
+# zsh-like syntax colors for commands, options, and arguments.
+ble-face -s syntax_default fg=white
+ble-face -s syntax_quoted fg=yellow
+ble-face -s syntax_varname fg=magenta
+ble-face -s command_builtin fg=green
+ble-face -s command_file fg=green
+ble-face -s command_alias fg=green
+ble-face -s command_function fg=green
+ble-face -s command_keyword fg=blue
+ble-face -s argument_option fg=cyan
+ble-face -s argument_error fg=black,bg=red
