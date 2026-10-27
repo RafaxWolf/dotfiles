@@ -81,46 +81,46 @@ In this repository, standalone Neovim sets `mapleader` to `<Space>` (`general/se
 
 | Mode | Shortcut | Action | Notes |
 | --- | --- | --- | --- |
-| Normal | `<C-c>` | Escape (`<Esc>`) | Quick cancel |
-| Insert | `jk`, `kj`, `jj`, `kk` | Exit insert mode | Fast Escape alternatives |
-| Normal | `<C-s>` | Save (`:w`) | |
-| Normal | `<C-q>` | Save and quit (`:wq!`) | |
-| Normal | `<C-b>` | Close current buffer (`:bd`) | |
-| Normal | `<M-j>`, `<M-k>` | Resize window height | `-2` / `+2` |
-| Normal | `<M-h>`, `<M-l>` | Resize window width | `-2` / `+2` |
-| Normal | `<C-h>`, `<C-j>`, `<C-k>`, `<C-l>` | Move between windows | |
-| Normal *(not VS Code)* | `<Tab>`, `<S-Tab>` | Next/previous buffer | Only when `!exists('g:vscode')` |
-| Visual | `J`, `K` | Move selected lines down/up | Keeps selection |
-| Visual | `<`, `>` | Re-indent and keep selection | `gv` |
+| Normal | `Ctrl+C` (`<C-c>`) | Escape (`<Esc>`) | Quick cancel |
+| Insert | `j then k` / `k then j` / `j then j` / `k then k` (`jk`, `kj`, `jj`, `kk`) | Exit insert mode | Fast Escape alternatives |
+| Normal | `Ctrl+S` (`<C-s>`) | Save (`:w`) | |
+| Normal | `Ctrl+Q` (`<C-q>`) | Save and quit (`:wq!`) | |
+| Normal | `Ctrl+B` (`<C-b>`) | Close current buffer (`:bd`) | |
+| Normal | `Alt+J` / `Alt+K` (`<M-j>`, `<M-k>`) | Resize window height | `-2` / `+2` |
+| Normal | `Alt+H` / `Alt+L` (`<M-h>`, `<M-l>`) | Resize window width | `-2` / `+2` |
+| Normal | `Ctrl+H` / `Ctrl+J` / `Ctrl+K` / `Ctrl+L` (`<C-h>`, `<C-j>`, `<C-k>`, `<C-l>`) | Move between windows | |
+| Normal *(not VS Code)* | `Tab` / `Shift+Tab` (`<Tab>`, `<S-Tab>`) | Next/previous buffer | Only when `!exists('g:vscode')` |
+| Visual | `J` / `K` | Move selected lines down/up | Keeps selection |
+| Visual | `<` / `>` (`<`, `>`) | Re-indent and keep selection | `gv` |
 
 ### Plugin mappings (standalone Neovim)
 
 | Mode | Shortcut | Action | Plugin/Source |
 | --- | --- | --- | --- |
-| Normal | `<Leader>n` | Toggle NERDTree | NERDTree |
-| Normal | `<Leader>e` | `:CocCommand explorer` | CoC explorer |
-| Normal | `<Space>r` | Toggle Ranger (`:RnvimrToggle`) | rnvimr |
-| Normal | `<Leader>b` | `:Buffers` | FZF |
-| Normal | `<Leader>g` | `:Rg` | FZF |
-| Normal | `<Leader>t` | `:Tags` | FZF |
-| Normal | `<Leader>m` | `:Marks` | FZF |
-| Normal | `<Leader>p` | `:Prettier` | prettier.vim mapping |
-| Normal/Visual | `<Space>/` | Comment toggle (`:Commentary`) | vim-commentary |
-| Normal | `<Leader>gj`, `<Leader>gk` | Next/previous git hunk | vim-signify |
+| Normal | `Space, then n` (`<Leader>n`) | Toggle NERDTree | NERDTree |
+| Normal | `Space, then e` (`<Leader>e`) | `:CocCommand explorer` | CoC explorer |
+| Normal | `Space, then r` (`<Space>r`) | Toggle Ranger (`:RnvimrToggle`) | rnvimr |
+| Normal | `Space, then b` (`<Leader>b`) | `:Buffers` | FZF |
+| Normal | `Space, then g` (`<Leader>g`) | `:Rg` | FZF |
+| Normal | `Space, then t` (`<Leader>t`) | `:Tags` | FZF |
+| Normal | `Space, then m` (`<Leader>m`) | `:Marks` | FZF |
+| Normal | `Space, then p` (`<Leader>p`) | `:Prettier` | prettier.vim mapping |
+| Normal/Visual | `Space, then /` (`<Space>/`) | Comment toggle (`:Commentary`) | vim-commentary |
+| Normal | `Space, then g, then j` / `Space, then g, then k` (`<Leader>gj`, `<Leader>gk`) | Next/previous git hunk | vim-signify |
 
 ### CoC mappings (standalone Neovim)
 
 | Mode | Shortcut | Action |
 | --- | --- | --- |
-| Normal | `[g`, `]g` | Previous/next diagnostic |
-| Normal | `gd`, `gy`, `gi`, `gr` | Go to definition/type/implementation/references |
+| Normal | `[ then g` / `] then g` (`[g`, `]g`) | Previous/next diagnostic |
+| Normal | `g then d` / `g then y` / `g then i` / `g then r` (`gd`, `gy`, `gi`, `gr`) | Go to definition/type/implementation/references |
 | Normal | `K` | Show documentation/hover |
-| Normal | `<Leader>rn` | Rename symbol |
-| Normal/Visual | `<Leader>a` | Code action (selected/current) |
-| Normal | `<Leader>ac` | Code action for current buffer |
-| Normal | `<Leader>qf` | Auto-fix current line |
-| Visual + Operator-pending | `if`, `af` | Function text objects (inner/around) |
-| Visual + Operator-pending | `ic`, `ac` | Class text objects (inner/around) |
+| Normal | `Space, then r, then n` (`<Leader>rn`) | Rename symbol |
+| Normal/Visual | `Space, then a` (`<Leader>a`) | Code action (selected/current) |
+| Normal | `Space, then a, then c` (`<Leader>ac`) | Code action for current buffer |
+| Normal | `Space, then q, then f` (`<Leader>qf`) | Auto-fix current line |
+| Visual + Operator-pending | `i then f` / `a then f` (`if`, `af`) | Function text objects (inner/around) |
+| Visual + Operator-pending | `i then c` / `a then c` (`ic`, `ac`) | Class text objects (inner/around) |
 
 ### `<Leader>f` mapping collision
 
@@ -136,6 +136,6 @@ If needed, inspect with `:verbose map <Leader>f` and `:verbose xmap <Leader>f`.
 
 | Mode | Shortcut | Action |
 | --- | --- | --- |
-| Normal (VS Code Neovim integration) | `s` | EasyMotion two-character jump |
+| Normal (VS Code Neovim integration) | `s` (`s`) | EasyMotion two-character jump |
 
 Review plugin runtime requirements before installing language tooling.
