@@ -23,7 +23,7 @@ Personal Neovim configuration organized into settings, keybindings, plugins, the
 For this setup, install at least these tools:
 
 ```bash
-paru -S neovim git curl nodejs npm ripgrep fzf ranger
+pacman -S neovim git curl nodejs npm ripgrep fzf ranger
 ```
 
 > Some plugins may need extra runtime dependencies depending on your language stack.
