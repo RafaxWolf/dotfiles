@@ -82,7 +82,7 @@ En este repositorio, Neovim independiente define `mapleader` como `<Space>` (`ge
 | Modo | Atajo | Acción | Notas |
 | --- | --- | --- | --- |
 | Normal | `Ctrl+C` (`<C-c>`) | Escape (`<Esc>`) | Cancelación rápida |
-| Inserción | `J luego K` / `K luego J` / `J luego J` / `K luego K` (`jk`, `kj`, `jj`, `kk`) | Salir de inserción | Alternativas rápidas a Escape |
+| Inserción | `j luego k` / `k luego j` / `j luego j` / `k luego k` (`jk`, `kj`, `jj`, `kk`) | Salir de inserción | Alternativas rápidas a Escape |
 | Normal | `Ctrl+S` (`<C-s>`) | Guardar (`:w`) | |
 | Normal | `Ctrl+Q` (`<C-q>`) | Guardar y salir (`:wq!`) | |
 | Normal | `Ctrl+B` (`<C-b>`) | Cerrar buffer actual (`:bd`) | |
@@ -97,30 +97,30 @@ En este repositorio, Neovim independiente define `mapleader` como `<Space>` (`ge
 
 | Modo | Atajo | Acción | Plugin/Origen |
 | --- | --- | --- | --- |
-| Normal | `Space, luego N` (`<Leader>n`) | Alternar NERDTree | NERDTree |
-| Normal | `Space, luego E` (`<Leader>e`) | `:CocCommand explorer` | CoC explorer |
-| Normal | `Space, luego R` (`<Space>r`) | Alternar Ranger (`:RnvimrToggle`) | rnvimr |
-| Normal | `Space, luego B` (`<Leader>b`) | `:Buffers` | FZF |
-| Normal | `Space, luego G` (`<Leader>g`) | `:Rg` | FZF |
-| Normal | `Space, luego T` (`<Leader>t`) | `:Tags` | FZF |
-| Normal | `Space, luego M` (`<Leader>m`) | `:Marks` | FZF |
-| Normal | `Space, luego P` (`<Leader>p`) | `:Prettier` | mapping de prettier.vim |
-| Normal/Visual | `Space, luego /` (`<Space>/`) | Alternar comentario (`:Commentary`) | vim-commentary |
-| Normal | `Space, luego G luego J` / `Space, luego G luego K` (`<Leader>gj`, `<Leader>gk`) | Siguiente/anterior hunk de git | vim-signify |
+| Normal | `Espacio, luego n` (`<Leader>n`) | Alternar NERDTree | NERDTree |
+| Normal | `Espacio, luego e` (`<Leader>e`) | `:CocCommand explorer` | CoC explorer |
+| Normal | `Espacio, luego r` (`<Space>r`) | Alternar Ranger (`:RnvimrToggle`) | rnvimr |
+| Normal | `Espacio, luego b` (`<Leader>b`) | `:Buffers` | FZF |
+| Normal | `Espacio, luego g` (`<Leader>g`) | `:Rg` | FZF |
+| Normal | `Espacio, luego t` (`<Leader>t`) | `:Tags` | FZF |
+| Normal | `Espacio, luego m` (`<Leader>m`) | `:Marks` | FZF |
+| Normal | `Espacio, luego p` (`<Leader>p`) | `:Prettier` | mapping de prettier.vim |
+| Normal/Visual | `Espacio, luego /` (`<Space>/`) | Alternar comentario (`:Commentary`) | vim-commentary |
+| Normal | `Espacio, luego g, luego j` / `Espacio, luego g, luego k` (`<Leader>gj`, `<Leader>gk`) | Siguiente/anterior hunk de git | vim-signify |
 
 ### Mappings de CoC (Neovim independiente)
 
 | Modo | Atajo | Acción |
 | --- | --- | --- |
-| Normal | `[ luego G` / `] luego G` (`[g`, `]g`) | Diagnóstico anterior/siguiente |
-| Normal | `G luego D` / `G luego Y` / `G luego I` / `G luego R` (`gd`, `gy`, `gi`, `gr`) | Ir a definición/tipo/implementación/referencias |
+| Normal | `[ luego g` / `] luego g` (`[g`, `]g`) | Diagnóstico anterior/siguiente |
+| Normal | `g luego d` / `g luego y` / `g luego i` / `g luego r` (`gd`, `gy`, `gi`, `gr`) | Ir a definición/tipo/implementación/referencias |
 | Normal | `K` | Mostrar documentación/hover |
-| Normal | `Space, luego R luego N` (`<Leader>rn`) | Renombrar símbolo |
-| Normal/Visual | `Space, luego A` (`<Leader>a`) | Code action (selección/actual) |
-| Normal | `Space, luego A luego C` (`<Leader>ac`) | Code action para el buffer actual |
-| Normal | `Space, luego Q luego F` (`<Leader>qf`) | Auto-fix en la línea actual |
-| Visual + Operador-pendiente | `I luego F` / `A luego F` (`if`, `af`) | Text objects de función (inner/around) |
-| Visual + Operador-pendiente | `I luego C` / `A luego C` (`ic`, `ac`) | Text objects de clase (inner/around) |
+| Normal | `Espacio, luego r, luego n` (`<Leader>rn`) | Renombrar símbolo |
+| Normal/Visual | `Espacio, luego a` (`<Leader>a`) | Code action (selección/actual) |
+| Normal | `Espacio, luego a, luego c` (`<Leader>ac`) | Code action para el buffer actual |
+| Normal | `Espacio, luego q, luego f` (`<Leader>qf`) | Auto-fix en la línea actual |
+| Visual + Operador-pendiente | `i luego f` / `a luego f` (`if`, `af`) | Text objects de función (inner/around) |
+| Visual + Operador-pendiente | `i luego c` / `a luego c` (`ic`, `ac`) | Text objects de clase (inner/around) |
 
 ### Colisión de `<Leader>f`
 
@@ -136,6 +136,6 @@ Si necesitas confirmarlo, revisa `:verbose map <Leader>f` y `:verbose xmap <Lead
 
 | Modo | Atajo | Acción |
 | --- | --- | --- |
-| Normal (integración VS Code Neovim) | `S` (`s`) | Salto EasyMotion de dos caracteres |
+| Normal (integración VS Code Neovim) | `s` (`s`) | Salto EasyMotion de dos caracteres |
 
 Revisa los requisitos de cada plugin antes de instalar herramientas de lenguajes.
